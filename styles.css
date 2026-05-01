@@ -677,3 +677,166 @@ iframe {
     max-width: calc(100% - 16px) !important;
   }
 }
+
+/* =====================================================
+   V3 MOBILE EMOJI + FINAL STABILITY PATCH
+   يثبت المساعد الترحيبي/التعليمي على الموبايل ويضبط حجم الإيموجي
+   بدون حذف التصميم أو إيقاف التفاعلات الأساسية.
+===================================================== */
+@media (max-width: 768px) {
+  /* لا تسمح لعناصر fixed أو الإيموجي بصناعة عرض زائد */
+  .live-avatar,
+  .avatar-body,
+  .avatar-screen,
+  .avatar-hand,
+  .avatar-bubble,
+  .floating-logo,
+  .floating-stat {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: flat;
+  }
+
+  /* حجم مناسب للمساعد على الجوال بدل الظهور الكبير */
+  .live-avatar {
+    width: 78px !important;
+    max-width: 78px !important;
+    right: max(8px, env(safe-area-inset-right)) !important;
+    bottom: max(8px, env(safe-area-inset-bottom)) !important;
+    transform: translate3d(0, 0, 0) scale(1) !important;
+    will-change: opacity;
+  }
+
+  .avatar-body {
+    width: 70px !important;
+    height: 70px !important;
+    border-radius: 22px !important;
+    display: grid !important;
+    place-items: center !important;
+    overflow: visible !important;
+  }
+
+  /* الإيموجي الترحيبي/التعليمي */
+  .avatar-screen {
+    font-size: 30px !important;
+    line-height: 1 !important;
+    width: 1em !important;
+    height: 1em !important;
+    display: grid !important;
+    place-items: center !important;
+    transform: translateZ(0) !important;
+    filter: drop-shadow(0 5px 7px rgba(0,0,0,.20)) !important;
+  }
+
+  .avatar-hand {
+    font-size: 15px !important;
+    line-height: 1 !important;
+  }
+
+  .hand-l { left: -7px !important; top: 18px !important; }
+  .hand-r { right: -7px !important; top: 18px !important; }
+
+  /* عند الظهور في المنتصف لا يكبر بشكل مزعج */
+  .live-avatar.center {
+    right: 50% !important;
+    left: auto !important;
+    bottom: calc(50dvh - 48px) !important;
+    transform: translate3d(50%, 0, 0) scale(1.06) !important;
+  }
+
+  .live-avatar.center .avatar-body {
+    width: 76px !important;
+    height: 76px !important;
+    border-radius: 24px !important;
+  }
+
+  .live-avatar.center .avatar-screen {
+    font-size: 34px !important;
+  }
+
+  .live-avatar.exit {
+    transform: translate3d(76px, 36px, 0) scale(.55) !important;
+  }
+
+  /* تثبيت فقاعة الكلام داخل حدود الشاشة */
+  .avatar-bubble {
+    right: 0 !important;
+    left: auto !important;
+    bottom: 82px !important;
+    width: min(210px, calc(100dvw - 24px)) !important;
+    max-width: calc(100dvw - 24px) !important;
+    padding: 9px 11px !important;
+    font-size: 12px !important;
+    line-height: 1.55 !important;
+    transform: translate3d(0, 10px, 0) !important;
+  }
+
+  .live-avatar.talking .avatar-bubble {
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  /* منع رجفة تغيير حالة الصعود/النزول أثناء التمرير في الموبايل */
+  .live-avatar.down .avatar-body,
+  .live-avatar.up .avatar-body {
+    animation: avatarIdle 3s ease-in-out infinite !important;
+  }
+
+  /* تقليل الحمل بدون إلغاء التصميم */
+  .avatar-body,
+  .floating-logo,
+  .topbar,
+  .nav,
+  .screen-card,
+  .smooth-card {
+    contain: layout paint;
+  }
+}
+
+@media (max-width: 420px) {
+  .live-avatar {
+    width: 68px !important;
+    max-width: 68px !important;
+    right: 7px !important;
+    bottom: 7px !important;
+  }
+
+  .avatar-body {
+    width: 62px !important;
+    height: 62px !important;
+    border-radius: 20px !important;
+  }
+
+  .avatar-screen {
+    font-size: 27px !important;
+  }
+
+  .avatar-hand {
+    font-size: 13px !important;
+  }
+
+  .hand-l { left: -6px !important; top: 16px !important; }
+  .hand-r { right: -6px !important; top: 16px !important; }
+
+  .live-avatar.center {
+    bottom: calc(50dvh - 42px) !important;
+    transform: translate3d(50%, 0, 0) scale(1.04) !important;
+  }
+
+  .live-avatar.center .avatar-body {
+    width: 68px !important;
+    height: 68px !important;
+  }
+
+  .live-avatar.center .avatar-screen {
+    font-size: 30px !important;
+  }
+
+  .avatar-bubble {
+    bottom: 72px !important;
+    width: min(198px, calc(100dvw - 18px)) !important;
+    max-width: calc(100dvw - 18px) !important;
+    font-size: 11.5px !important;
+  }
+}
