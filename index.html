@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>زياد الشاوش | Full-Stack Portfolio</title>
+  <meta name="description" content="Portfolio حديث للمهندس زياد راجح أحمد الشاوش - Full-Stack & Mobile Developer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="page-glow" aria-hidden="true"></div>
+  <div class="scroll-line" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <header class="topbar" id="top">
+    <a href="#home" class="brand" data-section-name="الرئيسية" aria-label="العودة إلى الرئيسية">
+      <span class="brand-icon">Z</span>
+      <span><strong>زياد الشاوش</strong><small>Full-Stack Developer</small></span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="فتح القائمة" aria-controls="navMenu" aria-expanded="false">☰</button>
+
+    <nav class="nav" id="navMenu" aria-label="القائمة الرئيسية">
+      <a href="#home" class="nav-link active" data-tab="الرئيسية">الرئيسية</a>
+      <a href="#about" class="nav-link" data-tab="نبذة عني">نبذة</a>
+      <a href="#skills" class="nav-link" data-tab="المهارات">المهارات</a>
+      <a href="#projects" class="nav-link" data-tab="المشاريع">المشاريع</a>
+      <a href="#journey" class="nav-link" data-tab="التعليم والخبرة">المسيرة</a>
+      <a class="nav-link" href="/./ziad_portfolio_live_avatar/index.html">تصميم اخر</a>
+      <a href="#contact" class="nav-link nav-cta" data-tab="التواصل">تواصل</a>
+      <button class="theme-switch" id="themeSwitch" type="button" aria-label="تفعيل الوضع النهاري">
+        <span class="theme-icon" aria-hidden="true">☾</span>
+        <span class="theme-text">ليلي</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home" data-section="الرئيسية">
+      <div class="hero-card screen-card reveal">
+        <div class="hero-copy">
+          <p class="mini-label"><span></span> متاح للوظيفة والعمل الحر</p>
+          <h1>أبني تجارب رقمية <em>واضحة، سريعة، ومبهرة</em></h1>
+          <p class="hero-text">مهندس برمجيات ومطور Full-Stack وموبايل، أمتلك خبرة تطبيقية في بناء حلول ويب وموبايل باستخدام Laravel وFlutter وReact.js مع اهتمام بجودة الكود وتجربة المستخدم.</p>
+
+          <div class="hero-actions">
+            <a class="btn primary nav-link-action" href="#projects" data-tab="المشاريع">عرض المشاريع</a>
+            <a class="btn ghost nav-link-action" href="#contact" data-tab="التواصل">ابدأ تواصل</a>
+            <a class="btn website-btn" href="https://calm-praline-f59ab1.netlify.app" target="_blank" rel="noopener noreferrer">رابط الموقع</a>
+            <a class="btn cv-btn" href="assets/cv.png" target="_blank" rel="noopener noreferrer">استعراض CV</a>
+            <button class="btn soft" id="copyEmail" type="button">نسخ البريد</button>
+          </div>
+
+          <div class="social-mini" aria-label="روابط سريعة">
+            <a href="https://calm-praline-f59ab1.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="فتح الموقع الشخصي">الموقع</a>
+            <a href="assets/cv.png" target="_blank" rel="noopener noreferrer" aria-label="استعراض السيرة الذاتية">CV</a>
+            <a href="mailto:alshawsh161@gmail.com" aria-label="إرسال بريد إلكتروني">Email</a>
+          </div>
+        </div>
+
+        <div class="hero-person">
+          <div class="portrait-orbit">
+            <span class="orbit orbit-1"></span>
+            <span class="orbit orbit-2"></span>
+            <img src="assets/me.png" alt="صورة زياد الشاوش" />
+          </div>
+          <div class="floating-stat fs1">React.js</div>
+          <div class="floating-stat fs2">Laravel</div>
+          <div class="floating-stat fs3">Flutter</div>
+        </div>
+      </div>
+
+      <aside class="business-stack reveal">
+        <article class="business-card card-teal tilt-card">
+          <div class="side-icons">
+            <span>▣ Frontend</span>
+            <span>▤ Backend</span>
+            <span>✦ UI/UX</span>
+            <span>⟲ Scalable</span>
+          </div>
+          <div>
+            <h2>ZIYAD R. AL-SHAWSH</h2>
+            <p>Software Engineer • Full-Stack • Mobile</p>
+            <ul>
+              <li><a href="mailto:alshawsh161@gmail.com">✉ alshawsh161@gmail.com</a></li>
+              <li><a href="tel:+967773793752">☎ +967 773 793 752</a></li>
+              <li><a href="https://www.google.com/maps/search/?api=1&query=Sana%27a%20Beni%20Al-Harith" target="_blank" rel="noopener noreferrer">📍 Sana'a - Beni Al-Harith</a></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="quote-card tilt-card">
+          <h3>CREATING SEAMLESS DIGITAL SOLUTIONS</h3>
+          <div><span>React.js</span><span>Laravel</span><span>REST APIs</span><span>UI/UX</span></div>
+          <p>Problem Solver • Analytical • Professional Delivery</p>
+        </article>
+      </aside>
+    </section>
+
+    <section class="section about" id="about" data-section="نبذة عني">
+      <div class="section-head reveal">
+        <span>About Me</span>
+        <h2>شغف بالتقنية، وتركيز على حل المشكلات.</h2>
+        <p>أجمع بين التحليل المنطقي والتصميم النظيف والتنفيذ العملي لتقديم تجربة رقمية قابلة للتوسع.</p>
+      </div>
+      <div class="about-grid">
+        <article class="info-card reveal smooth-card"><i>🧠</i><h3>تفكير تحليلي</h3><p>أفهم المشكلة أولاً، ثم أبني الحل بخطوات واضحة قابلة للاختبار.</p></article>
+        <article class="info-card reveal smooth-card"><i>🧑‍💻</i><h3>جودة الكود</h3><p>أهتم بتنظيم الملفات، قابلية الصيانة، ووضوح منطق العمل.</p></article>
+        <article class="info-card reveal smooth-card"><i>✨</i><h3>تجربة مستخدم</h3><p>واجهات مريحة، تفاعلات هادئة، وحركات سلسة بدون إزعاج.</p></article>
+        <article class="info-card reveal smooth-card"><i>🤝</i><h3>تعاون مرن</h3><p>استخدام Git/GitHub وممارسات عملية لإدارة الإصدارات.</p></article>
+      </div>
+    </section>
+
+    <section class="section skills" id="skills" data-section="المهارات">
+      <div class="section-head reveal"><span>Skills & Tech Stack</span><h2>تقنيات منظمة مثل لوحة احترافية.</h2></div>
+      <div class="skills-board reveal">
+        <article class="skill-box smooth-card"><header><span>▧</span><h3>Frontend Development</h3></header><p>واجهات مرنة ومتجاوبة</p><div class="chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span></div></article>
+        <article class="skill-box smooth-card"><header><span>▨</span><h3>Backend Development</h3></header><p>بنية قوية ومنظمة</p><div class="chips"><span>PHP</span><span>Laravel</span><span>REST APIs</span><span>MySQL</span></div></article>
+        <article class="skill-box smooth-card"><header><span>▦</span><h3>Mobile & Tools</h3></header><p>تطوير وتعاون وتسليم</p><div class="chips"><span>Flutter</span><span>Git</span><span>GitHub</span><span>AI Tools</span></div></article>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects" data-section="المشاريع">
+      <div class="section-head reveal"><span>Projects</span><h2>مشاريع بتصميم كاردات سلس ومنظم.</h2></div>
+      <div class="project-grid">
+        <article class="project-card reveal smooth-card"><div class="project-img img1"></div><h3>E-Commerce Reimagined</h3><p>منصة تجارة إلكترونية قابلة للتوسع مع واجهة سهلة وتجربة استخدام منظمة.</p><div class="project-tags"><span>Laravel</span><span>React</span><span>MySQL</span></div></article>
+        <article class="project-card reveal smooth-card"><div class="project-img img2"></div><h3>Admin Dashboard</h3><p>لوحة تحكم لإدارة البيانات والعمليات والتقارير بشكل واضح وسريع.</p><div class="project-tags"><span>REST APIs</span><span>PHP</span><span>UI</span></div></article>
+        <article class="project-card reveal smooth-card"><div class="project-img img3"></div><h3>Mobile Experience</h3><p>تصميم تجربة موبايل مريحة وفعالة مع اهتمام بالأداء والتفاصيل.</p><div class="project-tags"><span>Flutter</span><span>Mobile</span><span>UX</span></div></article>
+      </div>
+    </section>
+
+    <section class="section journey" id="journey" data-section="التعليم والخبرة">
+      <div class="section-head reveal"><span>Experience & Education</span><h2>مسيرة تعليمية وعملية واضحة.</h2></div>
+      <div class="timeline reveal">
+        <article><b></b><div class="smooth-card"><h3>بكالوريوس تقنية المعلومات IT</h3><p>جامعة الناصر - صنعاء، برمجة وتطوير ويب وموبايل.</p></div></article>
+        <article><b></b><div class="smooth-card"><h3>تطوير Full-Stack</h3><p>تطبيقات ويب وموبايل وتجارب واجهات حديثة باستخدام Laravel وReact وFlutter.</p></div></article>
+        <article><b></b><div class="smooth-card"><h3>الشهادات</h3><p>ICDL • CPISM • DISM • IETA Institute IBBT بالتعاون مع جامعة الناصر.</p></div></article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact" data-section="التواصل">
+      <div class="contact-panel reveal smooth-card">
+        <div>
+          <span class="mini-label"><span></span> Contact</span>
+          <h2>لنبنِ شيئاً عظيماً معاً.</h2>
+          <p>تواصل معي للوظائف، المشاريع، أو التعاون التقني.</p>
+          <ul>
+            <li><a href="mailto:alshawsh161@gmail.com">✉ alshawsh161@gmail.com</a></li>
+            <li><a href="tel:+967773793752">☎ +967 773 793 752</a></li>
+            <li><a class="inline-link" href="https://calm-praline-f59ab1.netlify.app" target="_blank" rel="noopener noreferrer">🌐 calm-praline-f59ab1.netlify.app</a></li>
+            <li><a class="inline-link" href="assets/cv.png" target="_blank" rel="noopener noreferrer">📄 استعراض السيرة الذاتية CV</a></li>
+          </ul>
+        </div>
+        <form id="contactForm">
+          <input name="name" required placeholder="الاسم" autocomplete="name">
+          <input name="email" type="email" required placeholder="البريد" autocomplete="email">
+          <textarea name="message" required placeholder="رسالتك"></textarea>
+          <button class="btn primary" type="submit">إرسال عبر البريد</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="live-avatar" id="liveAvatar" aria-live="polite">
+    <div class="avatar-bubble" id="avatarBubble">مرحباً، سأفتح لك القسم الآن ✨</div>
+    <div class="avatar-body">
+      <div class="avatar-screen">👨‍💻</div>
+      <div class="avatar-hand hand-l">✨</div>
+      <div class="avatar-hand hand-r">🚀</div>
+    </div>
+  </div>
+
+  <a href="#home" class="floating-logo" id="floatingLogo" aria-label="شعار زياد - العودة للأعلى">
+    <img src="assets/logo.png" alt="شعار زياد الشاوش" />
+    <span>للأعلى</span>
+  </a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
